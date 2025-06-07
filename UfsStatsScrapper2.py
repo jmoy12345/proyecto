@@ -94,4 +94,3 @@ event_fights_df = pd.DataFrame(event_details)
 
 
 event_fights_df.to_csv("event_fights.csv", index=False)
-
