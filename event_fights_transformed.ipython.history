@@ -1,0 +1,25 @@
+%reset -f
+%run CargarDataFrames.py
+event_fights_df.head()
+event_fights.head()
+event_fights.share
+event_fights.shape
+event_fights.isna()
+event_fights.isna().sum()
+event_fights_cleaned = event_fights.dropna(subset=["fight_conclusion_link"])
+event_fights_cleaned.isna().sum()
+event_fights_cleaned.shape
+event_fights_cleaned.head()
+event_fights_cleaned.dtypes
+pd.unique(event_fights_cleaned["methods"])
+import ast;event_fights_cleaned["methods"] = event_fights_cleaned["methods"].apply(ast.literal_eval)
+event_fights_cleaned["methods"].head()
+event_fights_cleaned["methods"] = event_fights_cleaned["methods"].apply(lambda x: x[0] if isinstance(x, list) else pd.NA)
+event_fights_cleaned["methods"].head()
+event_fights_cleaned.head()
+event_fights_cleaned.columns
+event_fights_cleaned.unstack()
+event_fights_cleaned.isna().sum()
+event_fights_cleaned.to_csv("event_fights_transformed.csv")
+%history
+%history -f "event_fights_transformed.ipython.history"
