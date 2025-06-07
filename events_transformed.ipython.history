@@ -1,0 +1,54 @@
+import CargarDataFrames
+events.dtype
+events_df.dtype
+events_df
+%run CargarDataFrames.py
+events_df.dtype
+events_df.describe()
+events_df.head()
+date["date"] = pd.to_datetime(df["date"], format='%b %d, %Y')
+date["date"] = pd.to_datetime(events_df["date"], format='%b %d, %Y')
+events_df.isnull().sum()
+date["date"] = pd.to_datetime(events_df["date"], errors='coerce')
+%run CargarDataFrames.py
+date["date"] = pd.to_datetime(events_df["date"], errors='coerce')
+events_df.columns
+events_df["date"] = pd.to_datetime(events_df["date"], errors='coerce')
+events_df.head()
+df[["city", "state_country"] = df["location"].str.split(',', 1, expand = True)
+df[["city", "state_country"]] = df["location"].str.split(',', 1, expand = True)
+events_df[["city", "state_country"]] = events_df["location"].str.split(',', 1, expand = True)
+events_df[2 > len(events_df["location"].str.split(','))].sum()
+events_df["," in events_df["location"]].sum()
+events_df[events_df["location"].str.contains(",", na=False)].sum()
+events_df.dtypes
+events_df["location"].head()
+events_df["location"].str.split(",").head()
+events_df[["city", "state", "country"]] = events_df["location"].str.split(",")
+events_df[['city', 'state', 'country']] = events_df['location'].str.split(',', expand=True)
+# did work
+events_df.head()
+events_df.drop("location")
+events_df["location"].drop()
+events_df = events_df.drop(columns=["location"])
+events_df.head()
+events_df.to_csv("events_transformed.csv")
+events_df.isna().sum()
+events_df[events_df.isna()][["city", "state", "country"]]
+events_df[events_df.isna()]
+events_df.head()
+events_df[events_df["country"].isna()]
+events_df[['city', 'state', 'country']] = events_df[['city', 'state', 'country']].applymap(str.strip) # remove any trailing white spaces
+events_df[events_df["country"].isna()]
+events_df["country"] = events_df["country"].fillna(events_df["state"])
+events_df[events_df["country"].isna()]
+#events_df['state'] = events_df['state'].where(events_df['state'] == events_df['country'], pd.NA)
+events_df.index(534)
+events_df.iloc[534]
+events_df['state'] = events_df['state'].where(events_df['state'] != events_df['country'], pd.NA)
+events_df.head()
+events_df.iloc[534]
+events_df.to_csv("events_transformed.csv")
+events_df.to_csv("events_transformed.csv", index=False)
+%history > events_transformed.ipython.history
+%history -f events_transformed.ipython.history
