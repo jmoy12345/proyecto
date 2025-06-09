@@ -7,4 +7,31 @@ base de datos en MYSQL que se visualiza en dashboard
 Contenido 
 
 Descripccion
+# Proyecto de Web Scraping y Visualización de Datos de WikiDex
+
+Este proyecto consiste en...
+
+## Contenido
+
+- [Descripcion del proyecto](#descripcion)
+- [Requisitos](#requisitos)
+- [Estructura del proyecto](#estructura)
+- [Scripts](#scripts)
+- [Notas](#notas)
+
+## Descripcion
+
+Texto descriptivo...
+
+## Requisitos
+
+- `selenium`
+- `beautifulsoup4`
+- `pandas`
+...
+
+## Instalacion
+
+```bash
+pip install selenium beautifulsoup4 ...
 
