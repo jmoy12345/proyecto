@@ -1,0 +1,88 @@
+%run CargarDataFrames.py
+fighter_stats_df
+fighter_stats_df.isna().sum()
+pd.to_datetime(fighter_stats_df["date_of_birth"]), format='%b %d, %Y')
+pd.to_datetime(fighter_stats_df["date_of_birth"], format='%b %d, %Y')
+pd.to_datetime(fighter_stats_df["date_of_birth"].dropna(), format='%b %d, %Y')
+fighter_stats_df["date_of_birth"].isna().sum()
+fighter_stats_df.isna().sum()
+pd.to_datetime(fighter_stats_df["date_of_birth"], format="%b %d, %Y")
+fighter_stats_df["date_of_birth"].eq("--").sum()
+fighter_stats_df["date_of_birth"] = fighter_stats_df["date_of_birth"].replace("--", pd.NA)
+fighter_stats_df.notna()
+mask = fighter_stats_df["date_of_birth"].notna()
+fighter_stats_df.loc[mask, "date_of_birth"] = pd.to_datetime(fighter_stats_df.loc[mask, "date_of_birth"], format="%b %d, %Y", errors="coerce")
+fighter_stats_df["date_of_birth"].head()
+fighter_stats_df["date_of_birth"].isna().sum()
+fighter_stats_df["date_of_birth"].notna()
+mask = fighter_stats_df["date_of_birth"].notna()
+fighter_stats_df.loc[mask, "date_of_birth"] = pd.to_datetime(fighter_stats_df.loc[mask, "date_of_birth"]).dt.normalize()
+fighter_stats_df["date_of_birth"].head()
+fighter_stats_df["date_of_birth"].head()
+fighter_stats_df.loc[mask, "date_of_birth"] = pd.to_datetime(fighter_stats_df.loc[mask, "date_of_birth"]).dt.date()
+fighter_stats_df["date_of_birth"].head()
+fighter_stats_df.loc[mask, "date_of_birth"] = pd.to_datetime(fighter_stats_df.loc[mask, "date_of_birth"]).dt.date
+fighter_stats_df["date_of_birth"].head()
+fighter_stats_df.head()
+fighter_stats_df.isna().sum()
+fighter_stats_df["fighter_record"]
+fighter_stats_df["fighter_record"].str.replace(" (1 NC)", "")
+fighter_stats_df["fighter_record"].str.replace(" (1 NC)", "").str.replace("Record: ", "")
+fighter_stats_df["fighter_record"] = fighter_stats_df["fighter_record"].str.replace(" (1 NC)", "").str.replace("Record: ", "")
+fighter_stats_df["fighter_record"]
+fighter_stats_df["fighter_record"].isna().sum()
+fighter_stats_df["fighter_record"].str.split("-", expand=True)
+fighter_stats_df["fighter_record"].str.split("-", expand=True).astype(int)
+fighter_stats_df["fighter_record"] = fighter_stats_df["fighter_record"].str.replace(" (1 NC)", "").str.replace("Record: ", "").str.replace(" (2 NC)", "")
+fighter_stats_df["fighter_record"].str.split("-", expand=True).astype(int)
+fighter_stats_df["fighter_record"] = fighter_stats_df["fighter_record"].str.replace(" (1 NC)", "").str.replace("Record: ", "").str.replace(" (2 NC)", "").str.replace(" (3 NC)", "")
+fighter_stats_df["fighter_record"].str.split("-", expand=True).astype(int)
+fighter_stats_df[["wins", "losses", "draws"]] = fighter_stats_df["fighter_record"].str.split("-", expand=True).astype(int)
+fighter_stats_df[["wins", "losses", "draws"]].head()
+fighter_stats_df[["wins", "losses", "draws", "figher_record"]].head()
+fighter_stats_df[["wins", "losses", "draws", "figther_record"]].head()
+fighter_stats_df[["wins", "losses", "draws", "fighter_record"]].head()
+fighter_stats_df.drop(columns=["fighter_record"])
+fighter_stats_df = fighter_stats_df.drop(columns=["fighter_record"])
+fighter_stats_df["height"].str.replace("'", "").str.replace('"', "").str.replace(" ", ".")
+fighter_stats_df["height"] = fighter_stats_df["height"].str.replace("'", "").str.replace('"', "").str.replace(" ", ".")
+fighter_stats_df["height"]
+(fighter_stats_df["height"] == "--").sum()
+fighter_stats_df["height"].str.replace("--", pd.NA)
+fighter_stats_df["height"].replace("--", pd.NA)
+fighter_stats_df["height"] = fighter_stats_df["height"].replace("--", pd.NA)
+fighter_stats_df["height"]
+fighter_stats_df["weight"]
+fighter_stats_df["weight"] = fight_stats_df["weight"].replace("--", pd.NA)
+fighter_stats_df["weight"] = fighter_stats_df["weight"].replace("--", pd.NA)
+fighter_stats_df["weight"]
+fighter_stats_df["weight"].str.replace(" lbs.", "")
+fighter_stats_df["weight"] = fighter_stats_df["weight"].str.replace(" lbs.", "")
+fighter_stats_df["weight"]
+fighter_stats_df["reach"]
+fighter_stats_df["reach"] = fighter_stats_df["reach"].replace("--", pd.NA)
+fighter_stats_df["reach"]
+fighter_stats_df["reach"].str.replace('"', "")
+fighter_stats_df["reach"] = fighter_stats_df["reach"].str.replace('"', "")
+fighter_stats_df["reach"]
+fighter_stats_df = fighter_stats_df.rename(columns={
+    'striking_accuracy': 'striking_accuracy_per',
+    'strike_defence': 'strike_defence_per',
+    'takedown_accuracy': 'takedown_accuracy_per',
+    'takedown_defence': 'takedown_defence_per'
+})
+fighter_stats_df
+cols_to_convert = ["striking_accuracy_per", "strike_defence_per", "takedown_accuracy_per", "takedown_defence_per"]
+fighter_stats_df[cols_to_convert]
+fighter_stats_df[cols_to_convert] == "--"
+(fighter_stats_df[cols_to_convert] == "--").sum()
+#for column in cols_to_convert:
+#    fighter_stats_df[column] = fighter_stats_df[column].str.replace("%", "").astype(float)
+fighter_stats_df_bak = fighter_stats_df
+for column in cols_to_convert:
+    fighter_stats_df[column] = fighter_stats_df[column].str.replace("%", "").astype(float)
+fighter_stats_df[cols_to_convert].head()
+fighter_stats_df == "--"
+(fighter_stats_df == "--").sum()
+fighter_stats_df.to_csv("fighter_stats_transformed.csv", index=False)
+%history -f fighter_stats_transformed.ipython.history
