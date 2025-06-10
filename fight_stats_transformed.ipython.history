@@ -1,0 +1,93 @@
+%run CargarDataFrames.py
+fight_stats_df.head()
+fight_stats_df.shape
+fight_stats_df.isna().sum()
+fighter_stats_df[ fight_stats_df["fighter_1_knockdowns"].isna()]
+fight_stats_df["fighter_1_knockdowns"].isna()
+fight_stats_df["fighter_1_knockdowns"].isna().sum()
+figheter_stats_df[fight_stats_df["fighter_1_knockdowns"].isna()]
+fighter_stats_df[fight_stats_df["fighter_1_knockdowns"].isna()]
+fighter_stats_df["fighter_1_knockdowns"]
+fight_stats_df["fighter_1_knockdowns"]
+fight_stats_df["fighter_1_knockdowns"].isna().sum()
+fight_stats_df[ fight_stats_df["fighter_1_knockdowns"] == "---"]
+fight_stats_df.isna().sum()
+fight_stats_di_cleaned = fight_stats_df.dropna(subset=["fighter_1_knockdowns"])
+fight_stats_di_cleaned.isna().sum()
+fight_stats_di_cleaned[fight_stats_di_cleaned == "---"].sum()
+(fight_stats_di_cleaned == "---").sum()
+wrong_values = fight_stats_di_cleaned[fight_stats_di_cleaned == "---"].sum()
+wrong_values = (fight_stats_di_cleaned == "---").sum()
+wrong_values
+fight_stats_di_cleaned["fighter_1_significant_strikes_per"].head()
+fight_stats_di_cleaned[["fighter_1_significant_strikes_per", "fighter_2_significant_strikes_per"]].head()
+fight_stats_di_cleaned[["fighter_1_significant_strikes_per", "fighter_2_significant_strikes_per"]].str.rstrip("%")
+fight_stats_di_cleaned["fighter_1_significant_strikes_per"].str.rstrip("%")
+fight_stats_di_cleaned["fighter_1_significant_strikes_per"].str.rstrip("%").astype(float)
+fight_stats_di_cleaned["fighter_1_significant_strikes_per"].str.rstrip("%")
+fight_stats_di_cleaned["fighter_1_significant_strikes_per"] =  fight_stats_di_cleaned["fighter_1_significant_strikes_per"].str.rstrip("%")
+fight_stats_di_cleaned["fighter_2_significant_strikes_per"] =  fight_stats_di_cleaned["fighter_2_significant_strikes_per"].str.rstrip("%")
+fight_stats_di_cleaned[["fighter_1_significant_strikes_per", "fighter_2_significant_strikes_per"]].head()
+fight_stats_di_cleaned.replace("---", pd.NA)
+fight_stats_di_cleaned.isna().sum()
+fight_stats_di_cleaned[["fighter_1_significant_strikes_per", "fighter_2_significant_strikes_per"]].head()
+cols_to_convert = ["fighter_1_significant_strikes_per", "fighter_2_significant_strikes_per"]
+fight_stats_di_cleaned[cols_to_convert] = fight_stats_di_cleaned[cols_to_convert].astype(float)
+fight_stats_di_cleaned = fight_stats_di_cleaned.replace("---", pd.NA)
+fight_stats_di_cleaned[cols_to_convert] = fight_stats_di_cleaned[cols_to_convert].astype(float)
+fight_stats_di_cleaned[cols_to_convert].mean()
+fight_stats_di_cleaned[cols_to_convert].dropna().mean()
+fight_stats_di_cleaned[cols_to_convert].isna().sum()
+fight_stats_di_cleaned.columns
+fight_stats_di_cleaned["fighter_1_significant_strikes_per"].dropna().mean()
+fight_stats_di_cleaned["fighter_1_significant_strikes_per"].dropna().astype(float)
+fight_stats_di_cleaned["fighter_1_significant_strikes_per"].dropna().astype(float).mean()
+f1_s_strikes_per = fight_stats_di_cleaned["fighter_1_significant_strikes_per"].dropna().astype(float).mean()
+f2_s_strikes_per = fight_stats_di_cleaned["fighter_2_significant_strikes_per"].dropna().astype(float).mean()
+fight_stats_di_cleaned["fighter_1_significant_strikes_per"].dropna().astype(int)
+f1_s_strikes_per
+f1_s_strikes_per = f1_s_strikes_per.astype(int)
+f2_s_strikes_per = f2_s_strikes_per.astype(int)
+f1_s_strikes_per
+f2_s_strikes_per
+fight_stats_di_cleaned["fighter_1_significant_strikes_per"].fillna(f1_s_strikes_per)
+fight_stats_di_cleaned["fighter_1_significant_strikes_per"].isna().sum()
+fight_stats_di_cleaned["fighter_1_significant_strikes_per"].fillna(f1_s_strikes_per).isna().sum()
+fight_stats_di_cleaned["fighter_1_significant_strikes_per"] = fight_stats_di_cleaned["fighter_1_significant_strikes_per"].fillna(f1_s_strikes_per)
+fight_stats_di_cleaned["fighter_2_significant_strikes_per"] = fight_stats_di_cleaned["fighter_2_significant_strikes_per"].fillna(f2_s_strikes_per)
+fight_stats_di_cleaned[cols_to_convert].isna().sum()
+fight_stats_di_cleaned.isna().sum()
+cols_to_convert = ["fighter_1_takedowns_per", "fighter_2_takedowns_per"]
+fight_stats_di_cleaned[cols_to_convert].isna().sum()
+fight_stats_di_cleaned[cols_to_convert].head()
+fight_stats_di_cleaned["fighter_1_takedowns_per"].str.rstrip("%")
+fight_stats_di_cleaned[cols_to_convert].str.rstrip("%")
+fight_stats_di_cleaned["fighter_1_takedowns_per"].str.rstrip("%")
+fight_stats_di_cleaned[cols_to_convert[0]] = fight_stats_di_cleaned["fighter_1_takedowns_per"].str.rstrip("%")
+fight_stats_di_cleaned[cols_to_convert[1]] = fight_stats_di_cleaned["fighter_2_takedowns_per"].str.rstrip("%")
+fight_stats_di_cleaned[cols_to_convert].head()
+f1_takedowns_mean = fight_stats_di_cleaned[cols_to_convert[0]].dropna().astype(float).mean()
+f2_takedowns_mean = fight_stats_di_cleaned[cols_to_convert[1]].dropna().astype(float).mean()
+f1_takedowns_mean
+f2_takedowns_mean
+f1_takedowns_mean = f1_takedowns_mean.astype(int)
+f2_takedowns_mean = f2_takedowns_mean.astype(int)
+fight_stats_di_cleaned[cols_to_convert[0]] = fight_stats_di_cleaned[cols_to_convert[0]].fillna(f1_takedowns_mean)
+fight_stats_di_cleaned[cols_to_convert[1]] = fight_stats_di_cleaned[cols_to_convert[1]].fillna(f1_takedowns_mean)
+fight_stats_di_cleaned[cols_to_convert].head()
+fight_stats_di_cleaned.isna().sum()
+fight_stats_di_cleaned.isna().head()
+fight_stats_di_cleaned.head()
+fight_stats_di_cleaned["fighter_1_total_strikes"]
+fight_stats_di_cleaned["fighter_1_total_strikes"].str.split(" of ")
+fight_stats_di_cleaned[["fighter_1_strikes_landed", "fighter_1_strikes_attempted"]] = (fight_stats_di_cleaned["fighter_1_total_strikes"].str.split(" of ", expand=True).astype(int) )
+fight_stats_di_cleaned[["fighter_2_strikes_landed", "fighter_2_strikes_attempted"]] = (fight_stats_di_cleaned["fighter_2_total_strikes"].str.split(" of ", expand=True).astype(int) )
+fight_stats_di_cleaned[["fighter_2_strikes_landed", "fighter_2_strikes_attempted"]].head()
+fight_stats_di_cleaned[["fighter_2_total_strikes", "fighter_2_strikes_landed", "fighter_2_strikes_attempted"]].head()
+fight_stats_di_cleaned.drop(columns=["fighter_1_total_strikes", "fighter_2_total_strikes"])
+fight_stats_di_cleaned.drop(columns=["fighter_1_total_strikes", "fighter_2_total_strikes"]).columns
+fight_stats_di_cleaned = fight_stats_di_cleaned.drop(columns=["fighter_1_total_strikes", "fighter_2_total_strikes"])
+fight_stats_di_cleaned.to_csv("fight_stats_transformed.csv")
+%history -f fight_stats_transformed.ipython.history
+fight_stats_di_cleaned.to_csv("fight_stats_transformed.csv", index=False)
+%history -f fight_stats_transformed.ipython.history
