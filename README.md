@@ -14,7 +14,6 @@ Está desarrollado en Python con uso de librerías como BeautifulSoup, Pandas, S
 - [Fase 3: Carga en la Base de Datos](#fase-3-carga-en-la-base-de-datos)
 - [Visualización](#visualización)
 - [Resultado Esperado](#resultado-esperado)
-- [Conclusiones](#conclusiones)
 
 ---
 
@@ -113,12 +112,6 @@ El sistema desarrollado permite:
 - Consultar y analizar de forma interactiva los datos históricos de UFC.
 - Obtener insights sobre factores que influyen en el desempeño de los luchadores.
 - Construir una base sólida para modelos predictivos y analítica deportiva avanzada.
-
----
-
-## Conclusiones
-
-El proyecto permitió aplicar técnicas de web scraping, limpieza de datos, diseño de base de datos relacional y visualización. El enfoque puede extenderse a otros deportes o plataformas para análisis y desarrollo de modelos de Machine Learning para predicción de resultados.
 
 ---
 
