@@ -7,7 +7,7 @@ base de datos en MYSQL que se visualiza en dashboard
 Contenido 
 
 Descripccion
-# Proyecto de Web Scraping y Visualización de Datos de WikiDex
+# Proyecto de Web Scraping y Visualización de Datos de UFC
 
 Este proyecto consiste en...
 
