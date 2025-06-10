@@ -1,6 +1,4 @@
-¡Claro! Te puedo ayudar a definir algunas preguntas y objetivos para tu proyecto de ciencia de datos sobre UFC, y también a pensar en la problemática que podrías resolver con web scraping.
-
-### Posibles Preguntas y Objetivos para el Proyecto
+### Preguntas y Objetivos para el Proyecto
 
 #### **1. ¿Qué factores afectan el resultado de una pelea en UFC?**
 
@@ -62,15 +60,3 @@ El uso de **web scraping** te permitirá obtener una gran cantidad de datos que 
 
 * **Problema**: ¿Cuándo es el mejor momento para programar una pelea o un evento? Si tienes datos sobre la frecuencia de victorias en diferentes momentos del año, podrías ayudar a mejorar la programación de eventos.
 * **Solución**: Web scraping te permitirá recolectar datos históricos sobre las fechas de los eventos y los resultados de las peleas, lo que podría ayudarte a identificar patrones relacionados con los mejores momentos para realizar un evento.
-
----
-
-### Consideraciones Técnicas para Web Scraping
-
-Cuando utilices web scraping para recolectar estos datos, ten en cuenta los siguientes puntos:
-
-* **Sitios web con datos relevantes**: Asegúrate de que las páginas de donde planeas obtener los datos permiten el scraping, y que sus términos de uso no lo prohíben. Algunos sitios pueden tener medidas anti-scraping.
-* **Frecuencia de Actualización**: Algunos sitios como la UFC o ESPN pueden actualizar los datos con frecuencia. Asegúrate de programar tu scraper para obtener los datos a intervalos adecuados.
-* **Estructuración de los Datos**: Los datos obtenidos deben ser limpiados y estructurados correctamente para su análisis. Esto incluye asegurarse de que los datos estén en un formato que sea fácil de trabajar (por ejemplo, CSV, JSON, etc.).
-
-¿Te gustaría que profundice en alguna de estas preguntas u objetivos? O, si necesitas, también puedo ayudarte a definir más detalles sobre cómo realizar el scraping de estos datos.
